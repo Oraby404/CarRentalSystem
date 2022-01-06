@@ -10,7 +10,7 @@
 <h2>Find Your Car </h2>
 
 <div>
-    <form id="car_search" name="car_search" method="post" action="search.php">
+    <form name="car_search" method="post" action="search_results.php">
 
         <label for="car_manufacturer">Car Manufacturer</label>
         <select id="car_manufacturer" name="car_manufacturer" required>
@@ -22,71 +22,65 @@
             }
             $records = mysqli_query($db, "SELECT DISTINCT car_manufacture FROM car");
             while ($rs = mysqli_fetch_array($records)) {
-                echo "<option value='" . $rs['car_manufacture'] . "'>" . $rs['car_manufacture'] . "</option>";
+                echo "<option value='".$rs['car_manufacture']."'>" . $rs['car_manufacture'] . "</option>";
             }
             ?>
         </select>
 
         <br><br>
-        <label for="Car_model">Car Model</label>
-        <select id="model" name="model" required>
-            <option value="">Any</option>
-
-            <?php
-
-            $records = mysqli_query($db, "SELECT DISTINCT car_model FROM car");
-            while ($rs = mysqli_fetch_array($records)) {
-                echo "<option value='" . $rs['car_model'] . "'>" . $rs['car_model'] . "</option>";
-            }
-            ?>
-        </select>
-        <br><br>
-
 
         <label for="year">Model Year</label>
         <select id="year" name="year">
             <option value="">Any</option>
         </select>
 
-
         <br><br>
+
         <label for="distance">Distance Covered</label>
         <select id="distance" name="distance">
             <option value="">Any</option>
             <?php
-            $q1 = mysqli_query($db, "SELECT Max(distance_covered) FROM car");
-            $i = 10000;
+            $record = mysqli_query($db, "SELECT max(distance_covered) as max_distance FROM car");
+            $row = mysqli_fetch_array($record);
+            $q1 = $row['max_distance'];
+            $i = 25000;
             while ($i <= $q1) {
-                echo "<option value='" . $i . "'>" . $i . "</option>";
-                $i += 5000;
+                echo "<option value=".$i."> " . '< ' . $i . "</option>";
+                $i += 25000;
             }
             ?>
         </select>
 
         <br><br>
+
         <label for="rent">Daily Rent</label>
         <select id="rent" name="rent">
             <option value="">Any</option>
             <?php
-            $q1 = mysqli_query($db, "SELECT Max(daily_rent) FROM car");
-            $i = 50;
+            $record = mysqli_query($db, "SELECT max(daily_rent) as max_rent FROM car");
+            $row = mysqli_fetch_array($record);
+            $q1 = $row['max_rent'];
+            $i = 200;
             while ($i <= $q1) {
-                echo "<option value='" . $i . "'>" . $i . "</option>";
+                echo "<option value=".$i.">" . '< ' . $i . "</option>";
                 $i += 50;
             }
             ?>
         </select>
 
         <br><br>
+
         <label for="office">Office</label>
         <select id="office" name="office" required>
             <option value="">Office</option>
             <?php
             $records = mysqli_query($db, "SELECT DISTINCT office FROM car");
             while ($rs = mysqli_fetch_array($records)) {
-                echo "<option value='" . $rs['office'] . "'>" . $rs['office'] . "</option>";
+                echo "<option value=".$rs['office'].">" . $rs['office'] . "</option>";
             }
-            ?><?php mysqli_close($db);  // close connection ?>
+            ?>
+
+            <?php mysqli_close($db);  // close connection ?>
         </select>
 
         <br><br>
