@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>reserve</title>
+    <link rel="stylesheet" type="text/css" href="reserve.css">
+    <script src="reserve.js"></script>
+</head>
+
+<body background="background.jpeg">
+<h2>Reservation Page</h2>
+
+<div>
+
+    <form id="car_reservation" name="car_reservation" method="post" action="car_reservation" onsubmit="">
+
+
+        <label for="reservation_day">Reservation Day</label>
+        <input type="date" id="reservation_day" name="reservation_day" required>
+        <br><br>
+
+        <label for="return_day">Return Day</label>
+        <input type="date" id="return_day" name="return_day" required>
+        <br><br>
+
+        <label for="Payment">Payment method</label>
+        <select id="Payment" name="Payment" required>
+            <option value="">Choose Payment method</option>
+            <option value="connecting">Cash</option>
+            <option value="adjoining">Visa</option>
+        </select>
+        <br><br>
+
+
+        <button type="submit" id="reserve" name="reserve">reserve</button>
+        <br><br>
+
+    </form>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+
+    <title>Login</title>
+
+    <script src="validate.js">
+    </script>
+
+
+    <link rel="stylesheet" href="mystyle.css">
+
+    <!-- disbale the forward button -->
+    <script type='text/javascript'>
+        function changeHashOnLoad() {
+            window.location.href += '#';
+            setTimeout('changeHashAgain()', '50');
+        }
+
+        function changeHashAgain() {
+            window.location.href += '1';
+        }
+
+        var storedHash = window.location.hash;
+        window.setInterval(function () {
+            if (window.location.hash !== storedHash) {
+                window.location.hash = storedHash;
+            }
+        }, 50);
+        window.onload = changeHashOnLoad;
+    </script>
+
+</head>
+
+<body>
+
+<div class="myDiv">
+
+
+    <h1>Login</h1>
+
+
+    <form name="loginForm" action="login.php" onsubmit="return validateloginForm()" method="post">
+
+        <table cellspacing='15'>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="email" name="email"/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" id="passfield"/></td>
+                <td><input type="checkbox" onclick="showPassword('passfield')"/></td>
+            </tr>
+
+            <tr></tr>
+            <tr>
+                <td colspan="3"><input type="submit" id="loginButton" value="Login"/></td>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+    <form action="register.html" method="post">
+        <table cellspacing='10'>
+            <tr></tr>
+            <tr>
+                <td></td>
+                <td>Don't Have an Account?</td>
+                <td><input type="submit" id="registerButton" value="Register"/></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+
+</body>
+
+</html>

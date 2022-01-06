@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+
+    <title>Register</title>
+
+    <script src="validate.js">
+    </script>
+
+    <link rel="stylesheet" href="mystyle.css">
+
+
+</head>
+
+<body>
+
+<div class="myDiv">
+
+
+    <h1>Register</h1>
+
+    <form name="registerForm" action="register.php" onsubmit="return validateregisterForm()" method="post">
+        <table cellspacing='15'>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="r_name"/></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="email" name="r_email"/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="r_password" id="r_passfield"/></td>
+                <td><input type="checkbox" onclick="showPassword('r_passfield')"/></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td><input type="password" name="r_cpassword" id="rc_passfield"/></td>
+                <td><input type="checkbox" onclick="showPassword('rc_passfield')"/></td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td colspan="3"><input type="submit" id="registerButton" value="Create Account"/></td>
+            </tr>
+
+
+        </table>
+    </form>
+
+</div>
+
+</body>
+
+</html>
