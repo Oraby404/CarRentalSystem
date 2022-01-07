@@ -8,7 +8,7 @@ window.onload = function () {
     }*/
     var years = document.getElementById("year");
     var currentYear = (new Date()).getFullYear();
-    for (var i = 1990; i <= currentYear; i++) {
+    for (var i = 2000; i <= currentYear; i++) {
         var option = document.createElement("OPTION");
         option.innerHTML = i;
         option.value = i;

@@ -20,9 +20,9 @@ $sql = "SELECT * FROM sys_user WHERE email='$my_email' and user_password='$my_pa
 if ($result = $conn->query($sql)) {
     $row = $result->fetch_assoc();
     if ($row) {
-        $str = "Welcome " . $row["user_name"];
-        echo "<h1>$str</h1><br>";
-        echo '<a href="login.html">Signout</a>';
+        session_start();
+        $_SESSION['user_id']=$row["user_id"];
+        header('location:search.php');
     } else {
         echo "<h1>Account Does not Exist!</h1><br>";
         echo '<a href="login.html">Back</a>';
