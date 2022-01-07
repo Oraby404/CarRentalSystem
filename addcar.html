@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>search for cars</title>
+    <link rel="stylesheet" type="text/css" href="reserve.css">
+    <script src="addcar.js"></script>
+</head>
+
+<body>
+
+<h2>Find Your Car </h2>
+
+<div>
+    <form name="add_car" method="post" action="addcar.php" onsubmit=" return validateaddcar() ">
+
+        <label for="plate_id">Plate Id</label>
+        <input type="text" name="Plate" id="Plate" maxlength="7" minlength="7" required/>
+        <br><br>
+
+        <label for="car_manufacture">Car Manufacture</label>
+        <input type="text" name="manufacture" id="manufacture" minlength="2" required/>
+        <br><br>
+
+        <label for="car_model">Car Model</label>
+        <input type="text" name="model" id="model" required/>
+        <br><br>
+
+
+        <label for="model_year">Model Year</label>
+        <input type="number" name="year" id="year" max="2022" min="1980" required />
+        <br><br>
+
+        <label for="car_status">Car Status</label>
+        <select name="Status" id="Status" required>
+             <option value="ACTIVE">Active</option>
+             <option value="OUTOFSERVICE">Out of service</option>
+        </select>
+        <br><br>
+
+
+        <label for="daily_rent">Daily Rent</label>
+        <input type="number" name="rent" id="rent" min="50" max="10000" required/>
+        <br><br>
+
+
+        <label for="distance_covered">Distance Covered</label>
+        <input type="number" name="distance" id="distance" max="100000" min="0" required/>
+        <br><br>
+
+
+        <label for="office">Office</label>
+        <input type="text" name="off" id="off" required/>
+        <br><br>
+
+        <br><br>
+        <button type="submit" id="add" name="add">Add Car</button>
+        <br><br>
+
+    </form>
+</div>
+</body>
+</html>
