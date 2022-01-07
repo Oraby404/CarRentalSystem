@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>search for cars</title>
+    <title>Reserve a car</title>
     <link rel="stylesheet" type="text/css" href="reserve.css">
     <script src="reserve.js"></script>
 </head>
@@ -31,9 +31,14 @@
 
             $records = mysqli_query($db, "SELECT * FROM car WHERE car_manufacture = '$car_manufacturer' and distance_covered <= '$distance' and car_year >= '$year' and daily_rent <= '$rent' and office = '$office' and car_status = 'ACTIVE'");
 
-            while ($rs = mysqli_fetch_array($records)) {
-                echo "<option value='" . $rs['car_plate_id'] . "'>" . $rs['car_manufacture'] . ' ' . $rs['car_model'] . $rs['car_year'] . "  Distance Covered : " . $rs['distance_covered'] . PHP_EOL . "KM   Daily rent : " . (int)$rs['daily_rent'] . "</option>";
+            if (mysqli_num_rows($records) == 0) {
+                header('location:search.php');
+            } else {
+                while ($rs = mysqli_fetch_array($records)) {
+                    echo "<option value='" . $rs['car_plate_id'] . "'>" . $rs['car_manufacture'] . ' ' . $rs['car_model'] . ' ' . $rs['car_year'] . "  Distance Covered : " . $rs['distance_covered'] . "KM   Daily rent : " . (int)$rs['daily_rent'] . "</option>";
+                }
             }
+
 
             mysqli_close($db);
             ?>
@@ -47,15 +52,6 @@
 
         <label for="return_day">Return Day</label>
         <input type="date" id="return_day" name="return_day" required>
-
-        <br><br>
-
-        <label for="Payment">Payment method</label>
-        <select id="Payment" name="Payment" required>
-            <option value="">Choose Payment method</option>
-            <option value="connecting">Cash</option>
-            <option value="adjoining">Visa</option>
-        </select>
 
         <br><br>
 

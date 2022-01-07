@@ -21,7 +21,7 @@ if ($result = $conn->query($sql)) {
     $row = $result->fetch_assoc();
     if ($row) {
         session_start();
-        $_SESSION['user_id']=$row["user_id"];
+        $_SESSION['user_id']=$row;
         header('location:search.php');
     } else {
         echo "<h1>Account Does not Exist!</h1><br>";

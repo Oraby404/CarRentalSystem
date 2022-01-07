@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>search for cars</title>
+    <title>Search for cars</title>
     <link rel="stylesheet" type="text/css" href="reserve.css">
     <script src="reserve.js"></script>
 </head>
