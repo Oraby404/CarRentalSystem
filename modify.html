@@ -1,17 +1,17 @@
 <!DOCTYPE>
 <html lang="en">
 <head>
-    <title>search for cars</title>
-    <link rel="stylesheet" type="text/css" href="reserve.css">
+    <title>Modify Car</title>
+    <link rel="stylesheet" type="text/css" href="modify.css">
     <script src="validate.js"></script>
 </head>
 
 <body>
 
-<h2>Add Your Car </h2>
+<h2>Modify Car </h2>
 
 <div>
-    <form name="add_car" method="post" action="addcar.php" onsubmit=" return validateaddcar() ">
+    <form name="add_car" method="post" action="modify.php" onsubmit=" return validateaddcar() ">
 
         <label for="plate_id">Plate Id</label>
         <input type="text" name="Plate" id="Plate" maxlength="7" minlength="7" required/>
@@ -37,23 +37,12 @@
         </select>
         <br><br>
 
-
-        <label for="daily_rent">Daily Rent</label>
-        <input type="number" name="rent" id="rent" min="50" max="10000" required/>
-        <br><br>
-
-
-        <label for="distance_covered">Distance Covered</label>
-        <input type="number" name="distance" id="distance" max="100000" min="0" required/>
-        <br><br>
-
-
         <label for="office">Office</label>
         <input type="text" name="off" id="off" required/>
         <br><br>
 
         <br><br>
-        <button type="submit" id="add" name="add">Add Car</button>
+        <button type="submit" id="modify" name="modify">Modify</button>
         <br><br>
 
     </form>
