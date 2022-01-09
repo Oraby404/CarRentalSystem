@@ -21,8 +21,14 @@ if ($result = $conn->query($sql)) {
     $row = $result->fetch_assoc();
     if ($row) {
         session_start();
-        $_SESSION['user_id']=$row["user_id"];
-        header('location:search.php');
+        $_SESSION['user_id'] = $row;
+        $_SESSION['search'] = 1;
+        $_SESSION['res_period'] = 1;
+
+        if ($row['user_role'] == 'ADMIN')
+            header('location:http://localhost/Final_project/AdminPortal/admin_portal.html');
+        else
+            header('location:search.php');
     } else {
         echo "<h1>Account Does not Exist!</h1><br>";
         echo '<a href="login.html">Back</a>';
