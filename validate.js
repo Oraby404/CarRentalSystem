@@ -124,3 +124,12 @@ function validateaddcar() {
        }
  
 }
+function validatecustomerdate() {
+    var startDate = document.getElementById("start").value;
+    var endDate = document.getElementById("last").value;
+    if ((Date.parse(endDate) <= Date.parse(startDate))) {
+        alert("End date should be greater than Start date");
+        return false;
+    }
+    return true;
+}
