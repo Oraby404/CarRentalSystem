@@ -24,7 +24,7 @@
 if ($row)
 {       
         $_SESSION['myValue']= $plate_id;
-        header('Location: edit.php');
+        header('Location: edit.html');
 } 
 else
      header('Location: modify.html');        

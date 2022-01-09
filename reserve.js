@@ -1,11 +1,5 @@
 window.onload = function () {
-    /*var km = document.getElementById("distance");
-    for (var i = 10000; i <= 210000; i+=10000) {
-      var option = document.createElement("OPTION");
-      option.innerHTML = i;
-      option.value = i;
-      km.appendChild(option);
-    }*/
+    
     var years = document.getElementById("year");
     var currentYear = (new Date()).getFullYear();
     for (var i = 2000; i <= currentYear; i++) {
@@ -14,13 +8,6 @@ window.onload = function () {
         option.value = i;
         years.appendChild(option);
     }
-    /*var r=document.getElementById("rent")
-    for (var i = 50; i <= 1000; i+=50) {
-      var option = document.createElement("OPTION");
-      option.innerHTML = i;
-      option.value = i;
-      r.appendChild(option);
-    }*/
 };
 
 
