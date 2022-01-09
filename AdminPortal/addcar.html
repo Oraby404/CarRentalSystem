@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html lang="en">
 <head>
-    <title>search for cars</title>
+    <title>ADD CAR</title>
     <link rel="stylesheet" type="text/css" href="reserve.css">
     <script src="validate.js"></script>
 </head>
@@ -11,27 +11,27 @@
 <h2>Add Your Car </h2>
 
 <div>
-    <form name="add_car" method="post" action="addcar.php" onsubmit=" return validateaddcar() ">
+    <form name="add_car" method="post" action="addcar.php" onsubmit=" return validateAddcar() ">
 
         <label for="plate_id">Plate Id</label>
-        <input type="text" name="Plate" id="Plate" maxlength="7" minlength="7" required/>
+        <input type="text" name="plate_id" id="plate_id" maxlength="7" minlength="7" required/>
         <br><br>
 
         <label for="car_manufacture">Car Manufacture</label>
-        <input type="text" name="manufacture" id="manufacture" minlength="2" required/>
+        <input type="text" name="car_manufacture" id="car_manufacture" minlength="2" required/>
         <br><br>
 
         <label for="car_model">Car Model</label>
-        <input type="text" name="model" id="model" required/>
+        <input type="text" name="car_model" id="car_model" required/>
         <br><br>
 
 
         <label for="model_year">Model Year</label>
-        <input type="number" name="year" id="year" max="2022" min="1980" required />
+        <input type="number" name="model_year" id="model_year" max="2022" min="2000" required />
         <br><br>
 
         <label for="car_status">Car Status</label>
-        <select name="Status" id="Status" required>
+        <select name="car_status" id="car_status" required>
              <option value="ACTIVE">Active</option>
              <option value="OUTOFSERVICE">Out of service</option>
         </select>
@@ -39,22 +39,24 @@
 
 
         <label for="daily_rent">Daily Rent</label>
-        <input type="number" name="rent" id="rent" min="50" max="10000" required/>
+        <input type="number" name="daily_rent" id="daily_rent" min="50" max="10000" required/>
         <br><br>
 
 
         <label for="distance_covered">Distance Covered</label>
-        <input type="number" name="distance" id="distance" max="100000" min="0" required/>
+        <input type="number" name="distance_covered" id="distance_covered" max="100000" min="0" required/>
         <br><br>
 
 
         <label for="office">Office</label>
-        <input type="text" name="off" id="off" required/>
+        <input type="text" name="office" id="office" required/>
         <br><br>
 
         <br><br>
         <button type="submit" id="add" name="add">Add Car</button>
         <br><br>
+        <button type="text" id="back" name="back"><a href="admin_portal.html" style="color: black;text-decoration: none;">Back </a></button>
+
 
     </form>
 </div>

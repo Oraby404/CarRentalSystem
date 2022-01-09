@@ -34,7 +34,7 @@
 		}}
 		elseif ($car==""){
 				echo"<tr><th>" . 'Reservation_day' . "</th><th>" . 'Return_day' . "</th><th>" . 'Plate_id' . "</th><th>" . 'Manufacturer' . "</th><th>" . 'Model' . "</th><th>" . 'Year' . "</th><th>" . 'Status' . "</th><th>" . 'Rent' . "</th><th>" . 'Distance' . "</th><th>" . 'Office' . "</th><th>" . 'user_name' . "</th><th>" . 'registeration_date' . "</th><th>" . 'email' . "</th></tr>";		
-		$q="SELECT r.reservation_day,r.return_day,c.car_plate_id,c.car_manufacture,c.car_model,c.car_year,c.car_status,c.daily_rent,c.distance_covered,c.office,u.user_name,u.registeration_date,u.email FROM reservation as r NATURAL JOIN sys_user as u NATURAL JOIN car as c where r.reservation_day>='$start' AND r.return_day<='$last'";
+		$q="SELECT r.reservation_day,r.return_day,c.car_plate_id,c.car_manufacture,c.car_model,c.car_year,c.car_status,c.daily_rent,c.distance_covered,c.office,u.user_name,u.registration_date,u.email FROM reservation as r NATURAL JOIN sys_user as u NATURAL JOIN car as c where r.reservation_day>='$start' AND r.return_day<='$last'";
 
 		if ($result = mysqli_query($db,$q)) {		
 		while($row = $result->fetch_assoc()) {

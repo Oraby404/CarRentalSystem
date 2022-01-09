@@ -14,8 +14,8 @@
     <form name="car_search" method="post" action="reserve.php">
 
         <label for="car_manufacturer">Car Manufacturer</label>
-        <select id="car_manufacturer" name="car_manufacturer" required>
-            <option value="">Select a Manufacturer</option>
+        <select id="car_manufacturer" name="car_manufacturer">
+            <option value="">Any</option>
             <?php
             $db = mysqli_connect("localhost", "root", "", "crs");
             if (!$db) {
@@ -46,13 +46,14 @@
 
         <label for="year">Model Year</label>
         <select id="year" name="year">
-            <option value="'2000'">Any</option>
+            <option value="">Any</option>
         </select>
 
         <br><br>
 
         <label for="distance">Distance Covered</label>
         <select id="distance" name="distance">
+            <option value="">Any</option>
             <?php
             $record = mysqli_query($db, "SELECT max(distance_covered) as max_distance FROM car");
             $row = mysqli_fetch_array($record);
@@ -68,6 +69,7 @@
 
         <label for="rent">Daily Rent</label>
         <select id="rent" name="rent">
+            <option value="">Any</option>
             <?php
             $record = mysqli_query($db, "SELECT max(daily_rent) as max_rent FROM car");
             $row = mysqli_fetch_array($record);
@@ -82,8 +84,8 @@
         <br><br>
 
         <label for="office">Office</label>
-        <select id="office" name="office" required>
-            <option value="">Office</option>
+        <select id="office" name="office">
+            <option value="">Any</option>
             <?php
             $records = mysqli_query($db, "SELECT DISTINCT office FROM car");
             while ($rs = mysqli_fetch_array($records)) {
@@ -101,6 +103,7 @@
         <br><br>
 
     </form>
+    <button><a href="login.html">Log Out</a></button>
 </div>
 </body>
 </html>

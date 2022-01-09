@@ -95,32 +95,41 @@ function showPassword(input) {
     }
 }
 
-function validateaddcar() {
+function validateAddcar() {
 
     let flag =0;
     var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
     var format1=/\d/;
-    
+
     let plate = document.forms["add_car"]["Plate"].value;
     let manufacture = document.forms["add_car"]["manufacture"].value;
     let model = document.forms["add_car"]["model"].value;
     let off = document.forms["add_car"]["off"].value;
-    
+
     if ( format.test(plate)  ) {
-          alert("Insert valide plate id");
-          return false;
+        alert("Insert valide plate id");
+        return false;
     }
     if ( format.test(manufacture) || (/\d/.test(manufacture))) {
         alert("Enter Valide manufacture");
-         return false;
+        return false;
     }
     if ( format.test(model)) {
         alert("Enter Valide Model");
-         return false;
+        return false;
     }
     if ( format.test(off)  || (/\d/.test(off))) {
         alert("Enter Valid office name");
-         return false;
-       }
- 
+        return false;
+    }
+
+}
+function validatecustomerdate() {
+    var startDate = document.getElementById("start").value;
+    var endDate = document.getElementById("last").value;
+    if ((Date.parse(endDate) <= Date.parse(startDate))) {
+        alert("End date should be greater than Start date");
+        return false;
+    }
+    return true;
 }

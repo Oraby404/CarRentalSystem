@@ -45,12 +45,49 @@
             }
 
             $car_manufacturer = $_POST["car_manufacturer"];
-            $year = (int)$_POST["year"];
-            $distance = (int)$_POST["distance"];
-            $rent = (float)$_POST["rent"];
+            $year = $_POST["year"];
+            $distance = $_POST["distance"];
+            $rent = $_POST["rent"];
             $office = $_POST["office"];
 
-            $records = mysqli_query($db, "SELECT * FROM car WHERE car_manufacture = '$car_manufacturer' and distance_covered <= '$distance' and car_year >= '$year' and daily_rent <= '$rent' and office = '$office' and car_status = 'ACTIVE'");
+            $sql = "SELECT * FROM car WHERE ";
+
+            $and_index = 0;
+
+            if ($car_manufacturer !== "") {
+                $and_index = 1;
+                $sql = $sql . 'car_manufacture = ' . '\'' . $car_manufacturer . '\'';
+            }
+            if ($year !== "") {
+                if ($and_index++ > 0)
+                    $sql = $sql . ' and ';
+                $sql = $sql . 'car_year >= ' . '\'' . (int)$year . '\'';
+            }
+
+            if ($distance !== "") {
+                if ($and_index++ > 0)
+                    $sql = $sql . ' and ';
+                $sql = $sql . 'distance_covered <= ' . '\'' . (int)$distance . '\'';
+            }
+
+            if ($rent !== "") {
+                if ($and_index++ > 0)
+                    $sql = $sql . ' and ';
+                $sql = $sql . 'daily_rent <= ' . '\'' . (float)$rent . '\'';
+            }
+
+            if ($office !== "") {
+                if ($and_index++ > 0)
+                    $sql = $sql . ' and ';
+                $sql = $sql . 'office = ' . '\'' . $office . '\'';
+            }
+
+
+            if ($and_index == 0)
+                $sql = $sql . ' 1 ';
+
+            $records = mysqli_query($db, $sql);
+
 
             if (mysqli_num_rows($records) == 0) {
                 session_start();
@@ -82,10 +119,9 @@
         <button type="submit">Reserve</button>
         <br><br>
 
-        <br><br>
-
     </form>
 
+    <button><a href="search.php">Back</a></button>
 </div>
 </body>
 </html>

@@ -4,7 +4,7 @@ CREATE DATABASE CRS;
 
 USE CRS;
 
-CREATE TABLE sys_user (user_id int AUTO_INCREMENT, user_name varchar(255) not null, registeration_date date default CURRENT_DATE
+CREATE TABLE sys_user (user_id int AUTO_INCREMENT, user_name varchar(255) not null, registration_date date default CURRENT_DATE
                        , email varchar(255) not null,user_password varchar(225) not null,user_role varchar(10) not null, PRIMARY KEY(user_id));
 
 CREATE TABLE car (car_plate_id char(7) ,car_manufacture varchar(255) not null,car_model varchar(255) not null,car_year year not null,car_status varchar(255) not null

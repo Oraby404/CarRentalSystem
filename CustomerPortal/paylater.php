@@ -50,7 +50,7 @@
 
         ?>
 
-        <button type="submit" id="signout" name="signout">Sign Out</button>
+        <button type="submit" id="signout" name="signout">Log Out</button>
         <br><br>
 
         <br><br>

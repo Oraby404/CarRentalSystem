@@ -8,10 +8,10 @@
 
 <body>
 
-<h2>Modify Car </h2>
+<h2 style="margin-left: 23%">Modify Car </h2>
 
 <div>
-    <form name="add_car" method="post" action="modify.php" onsubmit=" return validateaddcar() ">
+    <form name="add_car" method="post" action="modify.php" onsubmit=" return validateAddcar() ">
 
         <label for="plate_id">Plate Id</label>
         <input type="text" name="Plate" id="Plate" maxlength="7" minlength="7" required/>
@@ -27,7 +27,7 @@
 
 
         <label for="model_year">Model Year</label>
-        <input type="number" name="year" id="year" max="2022" min="1980" required />
+        <input type="number" name="year" id="year" max="2022" min="2000" required />
         <br><br>
 
         <label for="car_status">Car Status</label>
@@ -46,6 +46,8 @@
         <br><br>
 
     </form>
+     <button type="text" id="back" name="back"><a href="admin_portal.html" style="color: black;text-decoration: none;">Back </a></button>
+
 </div>
 </body>
 </html>
