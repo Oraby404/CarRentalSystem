@@ -1,0 +1,56 @@
+body {
+   background: url("pic4.jpg") no-repeat center center fixed; 
+    width: 500px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+
+label {
+    display: block;
+    padding-bottom: 11px;
+    font-size: 1.3em;
+    font-weight: 500;
+    font-family: Apple Chancery, cursive;
+}
+
+input {
+    border-radius: 2px;
+    border: 2px solid #777;
+    box-sizing: border-box;
+    font-size: 1.25em;
+    font-family: 'Nanum Gothic';
+    width: 100%;
+    padding: 10px;
+    font-family: URW Chancery L, cursive;
+}
+
+button, select {
+    cursor: pointer;
+    height: 50px;
+    background: grey;
+    font-size: 1.25em;
+    border-radius: 6px;
+}
+
+button {
+    font-weight: 700;
+    width: 100%;
+}
+
+select {
+    background: white;
+    width: 100%;
+    padding-left: 10px;
+    font-family: URW Chancery L, cursive;
+    margin-bottom: 10px;
+}
+
+
+h2 {
+    margin-left: 25%;
+    margin-bottom: 11%;
+    font-size: 2.5em;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+
+}
