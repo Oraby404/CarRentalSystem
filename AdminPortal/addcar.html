@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <title>search for cars</title>
-    <link rel="stylesheet" type="text/css" href="/CustomerPortal/reserve.css">
-    <script src="/CustomerPortal/validate.js"></script>
+    <link rel="stylesheet" type="text/css" href="reserve.css">
+    <script src="validate.js"></script>
 </head>
 
 <body>
@@ -13,24 +13,24 @@
 <div>
     <form name="add_car" method="post" action="addcar.php" onsubmit=" return validateaddcar() ">
 
-        <label>Plate Id</label>
+        <label for="plate_id">Plate Id</label>
         <input type="text" name="Plate" id="Plate" maxlength="7" minlength="7" required/>
         <br><br>
 
-        <label>Car Manufacture</label>
+        <label for="car_manufacture">Car Manufacture</label>
         <input type="text" name="manufacture" id="manufacture" minlength="2" required/>
         <br><br>
 
-        <label>Car Model</label>
+        <label for="car_model">Car Model</label>
         <input type="text" name="model" id="model" required/>
         <br><br>
 
 
-        <label>Model Year</label>
+        <label for="model_year">Model Year</label>
         <input type="number" name="year" id="year" max="2022" min="1980" required />
         <br><br>
 
-        <label>Car Status</label>
+        <label for="car_status">Car Status</label>
         <select name="Status" id="Status" required>
              <option value="ACTIVE">Active</option>
              <option value="OUTOFSERVICE">Out of service</option>
@@ -38,17 +38,17 @@
         <br><br>
 
 
-        <label>Daily Rent</label>
+        <label for="daily_rent">Daily Rent</label>
         <input type="number" name="rent" id="rent" min="50" max="10000" required/>
         <br><br>
 
 
-        <label>Distance Covered</label>
+        <label for="distance_covered">Distance Covered</label>
         <input type="number" name="distance" id="distance" max="100000" min="0" required/>
         <br><br>
 
 
-        <label>Office</label>
+        <label for="office">Office</label>
         <input type="text" name="off" id="off" required/>
         <br><br>
 
