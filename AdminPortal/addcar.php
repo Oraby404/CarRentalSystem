@@ -1,11 +1,19 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+    <title>redirect</title>
+    <link rel="stylesheet" type="text/css" href="redirect.css">
+
+</head>
+<body>
+    <?php
     $db = mysqli_connect("localhost", "root", "", "crs");
     if (!$db) {die("Connection failed: " . mysqli_connect_error());}
-	
-	$plate_id = $_POST["Plate"];
-	$car_manufacture = $_POST["manufacture"];
-	$car_model = $_POST["model"];
-	$model_year = $_POST["year"];
+    
+    $plate_id = $_POST["Plate"];
+    $car_manufacture = $_POST["manufacture"];
+    $car_model = $_POST["model"];
+    $model_year = $_POST["year"];
     $car_status = $_POST["Status"];
     $distance_covered = $_POST["distance"];
     $daily_rent = $_POST["rent"];
@@ -23,16 +31,17 @@
         } else {
             $sql = "INSERT INTO car (car_plate_id , car_manufacture , car_model,car_year,car_status,distance_covered,daily_rent,office) VALUES ('$plate_id','$car_manufacture','$car_model','$model_year','$car_status','$distance_covered','$daily_rent','$office')";
             $db->query($sql);
-		    echo "<h1>Car ADDED!</h1><br>";
+            echo "<h1>Car ADDED!</h1><br>";
             echo '<a href="admin_panel.html">Back</a>';        
         }
     } 
 else {
     echo "<h1>Failed to addcar!</h1><br>";
-    echo "Error: " . $sql . "<br>" . $db->error;
 }
 
 
 
 $db->close();
 ?>
+</body>
+</html>
