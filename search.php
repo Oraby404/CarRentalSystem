@@ -21,6 +21,20 @@
             if (!$db) {
                 die("Connection failed: " . mysqli_connect_error());
             }
+            session_start();
+            if(!$_SESSION['search']){
+                echo '<script type =text/JavaScript>';
+                echo 'alert("No Cars Found!")';
+                echo '</script>';
+                $_SESSION['search'] = 1;
+            }
+            if(!$_SESSION['res_period']){
+                echo '<script type =text/JavaScript>';
+                echo 'alert("The car you selected is not available in this period , Please select another car!")';
+                echo '</script>';
+                $_SESSION['res_period'] = 1;
+            }
+
             $records = mysqli_query($db, "SELECT DISTINCT car_manufacture FROM car");
             while ($rs = mysqli_fetch_array($records)) {
                 echo "<option value='" . $rs['car_manufacture'] . "'>" . $rs['car_manufacture'] . "</option>";
